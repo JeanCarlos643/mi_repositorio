@@ -1,1 +1,50 @@
+import java.util.Scanner;
 
+public class Actividad3 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        byte edad;
+        char sexo;
+        long telefono;
+        short piso;
+        float tiempo;
+        int cedula;
+        boolean residente;
+        double duracion=0.0;
+        String nombre;
+
+        System.out.print("Nombre: ");
+        nombre=scanner.nextLine();
+        System.out.print("Edad: ");
+        edad=scanner.nextByte();
+        System.out.print("Masculino o Femenino: ");
+        sexo=scanner.next().charAt(0);
+        System.out.print("Cedula: ");
+        cedula=scanner.nextInt();
+        System.out.print("Numero de Telefono: ");
+        telefono=scanner.nextLong();
+        System.out.print("Piso del Edificio: ");
+        piso=scanner.nextShort();
+        System.out.print("Tiempo de Llegada: ");
+        tiempo=scanner.nextFloat();
+        System.out.print("Es residente? True o false: ");
+        residente=scanner.nextBoolean();
+
+        if (!residente) {
+            System.out.print("Duracion estimada de su visita: ");
+            duracion=scanner.nextDouble();
+        }
+System.out.println("Nombre: "+nombre);
+        System.out.println("Edad: "+edad);
+        System.out.println("Genero: "+sexo);
+        System.out.println("Cedula: "+cedula);
+        System.out.println("Telefono: "+telefono);
+        System.out.println("Piso: "+piso);
+        System.out.println("Tiempo de Llegada:"+tiempo);
+        System.out.println("Residente: "+(residente?"Si":"No"));
+        if (!residente){
+            System.out.println("Duracion de la visita: "+duracion);
+        }
+        scanner.close();
+    }
+}
