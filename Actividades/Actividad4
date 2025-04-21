@@ -1,1 +1,45 @@
+import java.util.Scanner;
 
+public class Actividad4 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Nombre: ");
+        String nombre=scanner.nextLine();
+        System.out.print("Edad: ");
+        byte edad=scanner.nextByte();
+        System.out.print("Sexo, Masculino o Femenino: ");
+        char sexo=scanner.next().charAt(0);
+        System.out.print("Cedula: ");
+        int cedula=scanner.nextInt();
+        System.out.print("Numero de telefono: ");
+        long telefono=scanner.nextLong();
+        System.out.print("¿Es residente? True o false: ");
+        boolean residente=scanner.nextBoolean();
+        System.out.print("¿Cuántas visitas hizo esta semana? ");
+        int cantidadVisitas=scanner.nextInt();
+        double sumaDuracion=0.0;
+        for (int i=1; i<=cantidadVisitas; i++) {
+            System.out.println("\n--- Visita #" + i + " ---");
+            System.out.print("Piso del edificio: ");
+            short piso=scanner.nextShort();
+            System.out.print("Hora de llegada: ");
+            float tiempoLlegada=scanner.nextFloat();
+            System.out.print("Duración de la visita en horas: ");
+            double duracion=scanner.nextDouble();
+            sumaDuracion+=duracion;
+            System.out.println("→ Piso: "+piso+" | Llegada: "+tiempoLlegada+" horas | Duración: "+duracion+" hrs");
+        }
+        double promedioDuracion=(cantidadVisitas>0) ? sumaDuracion/cantidadVisitas:0.0;
+        boolean mayorEdad=edad>=18;
+        System.out.println("Nombre: "+nombre);
+        System.out.println("Edad: "+edad+" ("+(mayorEdad ? "Mayor de edad" : "Menor de edad")+")");
+        System.out.println("Sexo: "+sexo);
+        System.out.println("Cédula: "+cedula);
+        System.out.println("Teléfono: "+telefono);
+        System.out.println("Residente: "+(residente ? "Sí" : "No"));
+        System.out.println("Total de visitas: "+cantidadVisitas);
+        System.out.printf("Promedio de duración: %.2f horas%n", promedioDuracion);
+        scanner.close();
+    }
+}
