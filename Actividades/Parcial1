@@ -1,1 +1,35 @@
+import java.util.Scanner;
 
+public class Parcial1{
+    public static void main(String[] args){
+        Scanner scanner=new Scanner(System.in);
+
+        String productos;
+        int inventario;
+        int unidadesVendidas;
+        int stock;
+
+        System.out.print("Nombre del Producto: ");
+        productos=scanner.nextLine();
+        System.out.print("Cantidad en Inventario: ");
+        inventario=scanner.nextInt();
+        System.out.print("Cantidad de Productos Vendidos: ");
+        unidadesVendidas=scanner.nextInt();
+        stock=inventario-unidadesVendidas;
+        if(stock<=0){
+            System.out.println("Ya no hay mas unidades de este Producto");
+            stock=0;
+        }
+        if(stock==0){
+            inventario*=2;
+            stock=inventario;
+            System.out.println("Inventario duplicado");
+        }
+        System.out.println("Producto: "+productos);
+        System.out.println("Inventario: "+inventario);
+        System.out.println("Unidades Vendidos: "+unidadesVendidas);
+        System.out.println("Stocks: "+stock);
+
+        scanner.close();
+    }
+}
